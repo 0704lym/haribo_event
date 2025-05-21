@@ -1,0 +1,12 @@
+@function vw($values, $base: 375) {
+  $result: ();
+  @each $val in $values {
+    @if type-of($val) == 'number' {
+      $converted: ($val / $base) * 100vw;
+      $result: append($result, $converted);
+    } @else {
+      $result: append($result, $val);
+    }
+  }
+  @return $result;
+}

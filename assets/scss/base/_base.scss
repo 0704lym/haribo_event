@@ -1,0 +1,29 @@
+@use '../utils/mixin' as mixin;
+
+:root {
+  --graph-pos: 0; /* 기본값 설정 */
+}
+
+html {
+  font-size: 62.5%;
+  body {
+    box-sizing: border-box;
+    position: relative;
+    @include mixin.fontFace("jua", 500, "normal", "BMJUA");
+    @include mixin.fontFace("HGSoftGGothicssi", 100, "normal", "HGSoftGGothicssi_00g");
+    @include mixin.fontFace("HGSoftGGothicssi", 200, "normal", "HGSoftGGothicssi_20g");
+    @include mixin.fontFace("HGSoftGGothicssi", 400, "normal", "HGSoftGGothicssi_40g");
+    @include mixin.fontFace("HGSoftGGothicssi", 600, "normal", "HGSoftGGothicssi_60g");
+    @include mixin.fontFace("HGSoftGGothicssi", 800, "normal", "HGSoftGGothicssi_80g");
+    @include mixin.fontFace("HGSoftGGothicssi", 900, "normal", "HGSoftGGothicssi_90g");
+
+    margin: 0 auto ;
+  }
+a {
+    color:inherit;
+    text-decoration: none;
+}
+}
+
+
+
