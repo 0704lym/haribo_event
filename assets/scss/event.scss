@@ -49,45 +49,62 @@
 
     .notice {
       position: absolute;
-      bottom: 30px;
+      bottom: 0px;
       width: 100%;
       text-align: center;
       span {
-        display: inline-block;
+        display: inline-flex;
         width: vw(302.01);
-        font-size: vw(9);
+        font-size: vw(8.5);
         color: #0066b3;
         font-weight: 400;
         line-height: 120%;
         font-family: "HGSoftGGothicssi", "맑은고딕", Arial, sans-serif;
         text-align: left;
       }
+
+      img {
+        width: vw(20);
+      }
     }
 
     @include mixin.laptop {
       @include mixin.backgroundImage("visual.png");
-      height: 1080px;
+      height: vw(1080,1920);
+      position: relative;
 
       .logo {
-        top: 43px;
+        top: 22px;
         width: vw(396.96, 1920);
       }
 
       .date {
-        top: 502.99px;
+        top: vw(502.99, 1920);
         font-size: vw(26, 1920);
       }
 
       .notice {
         position: absolute;
-        bottom: vw(13.17, 1920);
+        width: vw(665.56,1920);
+        bottom: vw(-2, 1920);
         right: vw(13.41, 1920);
-        text-align: left;
+
+    
 
         span {
           width: auto;
+              display: flex;
+        align-items: center;
           font-size: vw(13.08, 1920);
           text-align: left;
+
+          br {
+            display: none;
+          }
+        }
+
+           img {
+          width: vw(40.5,1920);
         }
       }
     }
