@@ -10,10 +10,29 @@ header,
   color: #fff;
   font-size: 4vw;
   text-align: center;
+  font-size: 2.03125vw;
 }
 header .popup-header,
 .popup-header .popup-header {
   font-size: 4.2666666667vw;
+}
+@media (min-width: 1024px) {
+  header .popup-header,
+  .popup-header .popup-header {
+    font-size: 2.03125vw;
+  }
+}
+@media (min-width: 1024px) {
+  header,
+  .popup-header {
+    padding: 1.9270833333vw 0vw;
+  }
+  header .inner,
+  .popup-header .inner {
+    margin: 0 auto;
+    font-size: 2.0833333333vw;
+    max-width: 41.6666666667vw;
+  }
 }
 
 main .inner {
@@ -26,6 +45,14 @@ main .inner .red {
 }
 main .inner .blue {
   color: #005baa;
+}
+@media (min-width: 1024px) {
+  main .inner {
+    padding: 2.3958333333vw 0vw;
+    max-width: 41.6666666667vw;
+    margin: 0 auto;
+    font-size: 1.09375vw;
+  }
 }
 main div[class^=sector] {
   border-bottom: 1px solid #999;
@@ -82,6 +109,16 @@ main .check-box .input-wrap .custom-checkbox .checkmark::after {
   opacity: 0;
   transition: opacity 0.2s ease;
 }
+@media (min-width: 1024px) {
+  main .check-box {
+    gap: 0.5208333333vw;
+  }
+  main .check-box .input-wrap .custom-checkbox .checkmark {
+    width: 1.25vw;
+    height: 1.25vw;
+    margin-right: 0.6770833333vw;
+  }
+}
 main .btn {
   display: inline-block;
   font-size: 2.1333333333vw;
@@ -89,6 +126,12 @@ main .btn {
   padding: 1.3333333333vw 2.1333333333vw;
   background-color: #005baa;
   border-radius: 5.3333333333vw;
+}
+@media (min-width: 1024px) {
+  main .btn {
+    padding: 0.5208333333vw 0.7291666667vw;
+    font-size: 0.78125vw;
+  }
 }
 main .input-box {
   width: 100%;
@@ -114,6 +157,30 @@ main .input-box .btn {
   bottom: 8px;
   right: 0;
 }
+@media (min-width: 1024px) {
+  main .input-box {
+    padding: 0;
+  }
+  main .input-box .input-wrap {
+    width: 21.875vw;
+    margin: 0 auto;
+    margin-bottom: 0.8333333333vw;
+  }
+  main .input-box .input-wrap .red {
+    position: absolute;
+    top: 0.4166666667vw;
+    left: 0.1041666667vw;
+  }
+  main .input-box .input-wrap input[type=text] {
+    width: 100%;
+    font-size: 1.0416666667vw;
+    padding: 0.5208333333vw 0.625vw;
+    border-bottom: 1px solid #999;
+  }
+  main .input-box .btn {
+    bottom: 0.5208333333vw;
+  }
+}
 main .text-box.not {
   display: none;
 }
@@ -134,7 +201,7 @@ main.fifth .sector-basic {
   border-bottom: none;
 }
 main.fifth .sector-basic .inner {
-  padding-top: 13.3333333333vw;
+  padding-top: 5.2604166667vw;
 }
 main.fifth .sector-basic .inner .input-box .input-wrap:nth-child(3), main.fifth .sector-basic .inner .input-box .input-wrap:nth-child(4) {
   display: none;
@@ -152,7 +219,7 @@ main.not div[class^=sector]:not(.sector-store):not(.sector-file):not(.sector-bas
   display: none;
 }
 main.not .sector-file .inner {
-  padding: 3.2vw 9.3333333333vw;
+  padding: 1.875vw;
 }
 main.not .sector-file .inner .text-box.first {
   display: none;
@@ -173,8 +240,11 @@ main.not .sector-button button:first-child {
 .sector-file .text-box {
   margin-bottom: 4.5333333333vw;
 }
+.sector-file .text-box br {
+  display: none;
+}
 .sector-file .text-box.not .red {
-  margin-left: -5px;
+  margin-left: -1.3333333333vw;
   font-weight: 600;
   margin-bottom: 3.2vw;
 }
@@ -184,8 +254,30 @@ main.not .sector-button button:first-child {
 .sector-file .text-box.not p:last-child {
   margin-bottom: 11px;
 }
+@media (min-width: 1024px) {
+  .sector-file .text-box.not .red {
+    margin-left: 0;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2.34375vw;
+  }
+  .sector-file .text-box.not .blue {
+    margin-bottom: 1.9791666667vw;
+  }
+  .sector-file .text-box.not .blue br.pc {
+    display: block;
+  }
+  .sector-file .text-box.not p:last-child {
+    margin-bottom: 2.3958333333vw;
+  }
+}
 .sector-file .text-box:last-child {
   margin-bottom: 0;
+}
+@media (min-width: 1024px) {
+  .sector-file .text-box {
+    margin-bottom: 2.34375vw;
+  }
 }
 .sector-file .input-box {
   display: flex;
@@ -247,6 +339,34 @@ main.not .sector-button button:first-child {
 .sector-file .input-box .input-wrap .file-cancel img {
   width: 100%;
   height: 100%;
+}
+@media (min-width: 1024px) {
+  .sector-file .input-box {
+    margin-bottom: 1.7708333333vw;
+  }
+  .sector-file .input-box .input-wrap .upload-name {
+    height: 2.6041666667vw;
+    width: 15vw;
+    font-size: 1.0416666667vw;
+  }
+  .sector-file .input-box .input-wrap label {
+    width: 7.5520833333vw;
+    height: 2.6041666667vw;
+    text-align: center;
+    padding: 0.6770833333vw 0vw;
+    color: #fff;
+    border-radius: 3.125vw;
+    vertical-align: middle;
+    background-color: #005baa;
+    cursor: pointer;
+    font-size: 1.09375vw;
+    font-weight: 600;
+  }
+  .sector-file .input-box .input-wrap .file-cancel {
+    bottom: 0.6770833333vw;
+    width: 1.0416666667vw;
+    height: 1.0416666667vw;
+  }
 }
 .sector-store .inner {
   padding: 5.3333333333vw 10.6666666667vw 2.9333333333vw;
@@ -325,14 +445,79 @@ main.not .sector-button button:first-child {
 .sector-store .inner .store-box ul li.on .choice {
   display: block;
 }
+@media (min-width: 1024px) {
+  .sector-store .inner {
+    padding: 1.875vw 0vw;
+  }
+  .sector-store .inner .text-box {
+    margin-bottom: 1.1979166667vw;
+  }
+  .sector-store .inner .text-box p:first-child {
+    padding-left: 0.5208333333vw;
+    margin-bottom: 0.625vw;
+  }
+  .sector-store .inner .store-box ul {
+    gap: 1.71875vw;
+  }
+  .sector-store .inner .store-box ul li {
+    margin-bottom: 1.71875vw;
+  }
+  .sector-store .inner .store-box ul li .icon-box {
+    width: 5.0260416667vw;
+    height: 5.0260416667vw;
+  }
+  .sector-store .inner .store-box ul li .icon-box.gs {
+    background-image: url("../image/gs.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .sector-store .inner .store-box ul li .icon-box.cu {
+    background-image: url("../image/cu.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .sector-store .inner .store-box ul li .icon-box.seven {
+    background-image: url("../image/seven.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .sector-store .inner .store-box ul li .icon-box.emart {
+    background-image: url("../image/emart.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .sector-store .inner .store-box ul li .choice {
+    font-size: 0.9375vw;
+    margin-top: 0.5729166667vw;
+    color: #005baa;
+  }
+}
 .sector-basic .text-box:first-child {
   margin-bottom: 8vw;
+}
+.sector-basic .text-box br {
+  display: none;
 }
 .sector-basic .check-box {
   margin-bottom: 4.8vw;
 }
 .sector-basic .input-box {
   margin-bottom: 6.6666666667vw;
+}
+@media (min-width: 1024px) {
+  .sector-basic .text-box:first-child {
+    margin-bottom: 2.7604166667vw;
+  }
+  .sector-basic .check-box {
+    margin-bottom: 3.3854166667vw;
+  }
+  .sector-basic .input-box {
+    margin-bottom: 3.3854166667vw;
+  }
 }
 .sector-first .text-box {
   margin-bottom: 4.8vw;
@@ -376,6 +561,43 @@ main.not .sector-button button:first-child {
 .sector-first .check-box .btn {
   margin-left: 6.1333333333vw;
 }
+@media (min-width: 1024px) {
+  .sector-first .text-box {
+    margin-bottom: 1.5625vw;
+  }
+  .sector-first .event-box {
+    margin-bottom: 1.6145833333vw;
+  }
+  .sector-first .event-box .event-title {
+    padding: 0.5208333333vw 0vw;
+    font-size: 1.0416666667vw;
+  }
+  .sector-first .event-box .event-cont {
+    padding: 1.25vw 1.7708333333vw;
+  }
+  .sector-first .event-box .event-cont li {
+    padding-left: 0.7291666667vw;
+  }
+  .sector-first .event-box .event-cont li:before {
+    content: "";
+    width: 0.2604166667vw;
+    height: 0.2604166667vw;
+    top: 0.5208333333vw;
+    left: 0vw;
+  }
+  .sector-first .check-box {
+    display: flex;
+    gap: 3.7333333333vw;
+    margin-bottom: 2.6041666667vw;
+  }
+  .sector-first .check-box .input-wrap {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .sector-first .check-box .btn {
+    margin-left: 0;
+  }
+}
 .sector-button .inner {
   display: flex;
   align-items: center;
@@ -395,6 +617,19 @@ main.not .sector-button button:first-child {
 }
 .sector-button .inner button:first-child {
   display: none;
+}
+@media (min-width: 1024px) {
+  .sector-button .inner {
+    margin-top: 0;
+    gap: 4.0625vw;
+  }
+  .sector-button .inner button {
+    width: 10.2083333333vw;
+    border-radius: 3.125vw;
+    font-size: 1.5625vw;
+    padding: 1.1458333333vw 0vw;
+    color: #fff;
+  }
 }
 
 .popup {
@@ -453,6 +688,71 @@ main.not .sector-button button:first-child {
 .popup.check .text {
   margin-bottom: 4.8vw;
   font-size: 2.9333333333vw;
+}
+@media (min-width: 1024px) {
+  .popup {
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 3.0208333333vw;
+    box-sizing: border-box;
+  }
+  .popup .popup-cont {
+    height: calc(100vh - 300px);
+    padding: 2.96875vw 0vw 2.4479166667vw;
+    width: 67.2916666667vw;
+    margin: 0 auto;
+  }
+  .popup .popup-cont .scroll-zone {
+    height: 100%;
+  }
+  .popup .popup-btn {
+    text-align: center;
+  }
+  .popup .popup-btn button {
+    width: 13.4375vw;
+    border-radius: 3.125vw;
+    font-size: 1.6666666667vw;
+    padding: 1.71875vw 0vw;
+  }
+  .popup.check .popup-header {
+    position: relative;
+    font-size: 4.2666666667vw;
+  }
+  .popup.check .popup-header .btn-before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 9.0666666667vw;
+    width: 2.9333333333vw;
+    height: 3.2vw;
+  }
+  .popup.check .popup-header .btn-before a {
+    width: 100%;
+    height: 100%;
+  }
+  .popup.check .popup-header .btn-before a img {
+    width: 100%;
+    height: 100%;
+  }
+  .popup.check .text {
+    margin-bottom: 4.8vw;
+    font-size: 2.9333333333vw;
+  }
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .popup.check .popup-header {
+    position: relative;
+    font-size: 2.1354166667vw;
+  }
+  .popup.check .popup-header .btn-before {
+    left: 3.2291666667vw;
+    width: 1.09375vw;
+    height: 2.0833333333vw;
+  }
+  .popup.check .text {
+    margin-bottom: 1.5625vw;
+    font-size: 1.09375vw;
+  }
 }
 
 .dim {

@@ -11,9 +11,22 @@ header,
   color: #fff;
   font-size: vw(15);
   text-align: center;
-
+font-size: vw(39, 1920);
   .popup-header {
     font-size: vw(16);
+    @include mixin.laptop {
+      font-size: vw(39, 1920);
+    }
+  }
+
+  @include mixin.laptop {
+    padding: vw(37 0, 1920);
+
+    .inner {
+      margin: 0 auto;
+      font-size: vw(40, 1920);
+      max-width: vw(800, 1920);
+    }
   }
 }
 
@@ -29,6 +42,13 @@ main {
 
     .blue {
       color: #005baa;
+    }
+
+    @include mixin.laptop {
+      padding: vw(46 0, 1920);
+      max-width: vw(800, 1920);
+      margin: 0 auto;
+      font-size: vw(21, 1920);
     }
   }
 
@@ -94,6 +114,19 @@ main {
         }
       }
     }
+
+    @include mixin.laptop {
+      gap: vw(10, 1920);
+      .input-wrap {
+        .custom-checkbox {
+          .checkmark {
+            width: vw(24, 1920);
+            height: vw(24, 1920);
+            margin-right: vw(13, 1920);
+          }
+        }
+      }
+    }
   }
 
   .btn {
@@ -103,6 +136,11 @@ main {
     padding: vw(5 8);
     background-color: #005baa;
     border-radius: vw(20);
+
+    @include mixin.laptop {
+      padding: vw(10 14, 1920);
+      font-size: vw(15, 1920);
+    }
   }
 
   //인풋
@@ -128,6 +166,29 @@ main {
       position: absolute;
       bottom: 8px;
       right: 0;
+    }
+
+    @include mixin.laptop {
+      padding: 0;
+      .input-wrap {
+        width: vw(420, 1920);
+        margin: 0 auto;
+        margin-bottom: vw(16, 1920);
+        .red {
+          position: absolute;
+          top: vw(8, 1920);
+          left: vw(2, 1920);
+        }
+        input[type="text"] {
+          width: 100%;
+          font-size: vw(20, 1920);
+          padding: vw(10 12, 1920);
+          border-bottom: 1px solid #999;
+        }
+      }
+      .btn {
+        bottom: vw(10, 1920);
+      }
     }
   }
 
@@ -160,7 +221,7 @@ main {
     .sector-basic {
       border-bottom: none;
       .inner {
-        padding-top: vw(50);
+        padding-top: vw(101, 1920);
 
         .input-box {
           .input-wrap {
@@ -201,7 +262,7 @@ main {
     }
     .sector-file {
       .inner {
-        padding: vw(12 35);
+        padding: vw(36, 1920);
         .text-box {
           &.first {
             display: none;
@@ -233,9 +294,12 @@ main {
   &-file {
     .text-box {
       margin-bottom: vw(17);
+      br {
+        display: none;
+      }
       &.not {
         .red {
-          margin-left: -5px;
+          margin-left: vw(-5);
           font-weight: 600;
           margin-bottom: vw(12);
         }
@@ -248,10 +312,35 @@ main {
             margin-bottom: 11px;
           }
         }
+
+        @include mixin.laptop {
+          .red {
+            margin-left: 0;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: vw(45, 1920);
+          }
+          .blue {
+            br.pc {
+              display: block;
+            }
+            margin-bottom: vw(38, 1920);
+          }
+
+          p {
+            &:last-child {
+              margin-bottom: vw(46, 1920);
+            }
+          }
+        }
       }
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      @include mixin.laptop {
+        margin-bottom: vw(45, 1920);
       }
     }
     .input-box {
@@ -313,6 +402,35 @@ main {
           img {
             width: 100%;
             height: 100%;
+          }
+        }
+      }
+      @include mixin.laptop {
+        margin-bottom: vw(34, 1920);
+        .input-wrap {
+          .upload-name {
+            height: vw(50, 1920);
+            width: vw(288, 1920);
+            font-size: vw(20, 1920);
+          }
+          label {
+            width: vw(145, 1920);
+            height: vw(50, 1920);
+            text-align: center;
+            padding: vw(13 0, 1920);
+            color: #fff;
+            border-radius: vw(60, 1920);
+            vertical-align: middle;
+            background-color: #005baa;
+            cursor: pointer;
+            font-size: vw(21, 1920);
+            font-weight: 600;
+          }
+
+          .file-cancel {
+            bottom: vw(13, 1920);
+            width: vw(20, 1920);
+            height: vw(20, 1920);
           }
         }
       }
@@ -397,6 +515,51 @@ main {
           }
         }
       }
+      @include mixin.laptop {
+        padding: vw(36 0, 1920);
+
+        .text-box {
+          margin-bottom: vw(23, 1920);
+          p {
+            &:first-child {
+              padding-left: vw(10, 1920);
+              margin-bottom: vw(12, 1920);
+            }
+          }
+        }
+        .store-box {
+          ul {
+            gap: vw(33, 1920);
+
+            li {
+              margin-bottom: vw(33, 1920);
+              .icon-box {
+                width: vw(96.5, 1920);
+                height: vw(96.5, 1920);
+
+                &.gs {
+                  @include mixin.backgroundImage("gs.svg");
+                }
+                &.cu {
+                  @include mixin.backgroundImage("cu.svg");
+                }
+                &.seven {
+                  @include mixin.backgroundImage("seven.svg");
+                }
+                &.emart {
+                  @include mixin.backgroundImage("emart.svg");
+                }
+              }
+
+              .choice {
+                font-size: vw(18, 1920);
+                margin-top: vw(11, 1920);
+                color: #005baa;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -405,6 +568,9 @@ main {
       &:first-child {
         margin-bottom: vw(30);
       }
+      br {
+        display: none;
+      }
     }
     .check-box {
       margin-bottom: vw(18);
@@ -412,6 +578,20 @@ main {
 
     .input-box {
       margin-bottom: vw(25);
+    }
+    @include mixin.laptop {
+      .text-box {
+        &:first-child {
+          margin-bottom: vw(53, 1920);
+        }
+      }
+      .check-box {
+        margin-bottom: vw(65, 1920);
+      }
+
+      .input-box {
+        margin-bottom: vw(65, 1920);
+      }
     }
   }
 
@@ -463,6 +643,50 @@ main {
         margin-left: vw(23);
       }
     }
+
+    @include mixin.laptop {
+      .text-box {
+        margin-bottom: vw(30, 1920);
+      }
+
+      .event-box {
+        margin-bottom: vw(31, 1920);
+
+        .event-title {
+          padding: vw(10 0, 1920);
+          font-size: vw(20, 1920);
+        }
+
+        .event-cont {
+          padding: vw(24 34, 1920);
+
+          li {
+            padding-left: vw(14, 1920);
+
+            &:before {
+              content: "";
+              width: vw(5, 1920);
+              height: vw(5, 1920);
+              top: vw(10, 1920);
+              left: vw(0);
+            }
+          }
+        }
+      }
+
+      .check-box {
+        display: flex;
+        gap: vw(14);
+        margin-bottom: vw(50, 1920);
+        .input-wrap {
+          display: inline-block;
+          margin-bottom: 0;
+        }
+        .btn {
+          margin-left: 0;
+        }
+      }
+    }
   }
 
   &-button {
@@ -485,6 +709,19 @@ main {
 
         &:first-child {
           display: none;
+        }
+      }
+
+      @include mixin.laptop {
+        margin-top: 0;
+        gap: vw(78, 1920);
+
+        button {
+          width: vw(196, 1920);
+          border-radius: vw(60, 1920);
+          font-size: vw(30, 1920);
+          padding: vw(22 0, 1920);
+          color: #fff;
         }
       }
     }
@@ -530,7 +767,7 @@ main {
     .popup-header {
       position: relative;
       font-size: vw(16);
-   
+
       .btn-before {
         position: absolute;
         top: 50%;
@@ -549,12 +786,89 @@ main {
         }
       }
     }
-       .text {
+    .text {
+      margin-bottom: vw(18);
+      font-size: vw(11);
+    }
+  }
+
+  @include mixin.laptop {
+    width: 100%;
+    height: 100vh;
+    padding-bottom: vw(58, 1920);
+    box-sizing: border-box;
+    .popup-cont {
+      height: calc(100vh - 300px);
+      padding: vw(57 0 47, 1920);
+      width: vw(1292,1920);
+      margin: 0 auto;
+
+      .scroll-zone {
+        height: 100%;
+      }
+    }
+
+    .popup-btn {
+      text-align: center;
+
+      button {
+        width: vw(258, 1920);
+        border-radius: vw(60, 1920);
+        font-size: vw(32, 1920);
+        padding: vw(33 0, 1920);
+      }
+    }
+
+    &.check {
+      .popup-header {
+        position: relative;
+        font-size: vw(16);
+
+        .btn-before {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: vw(34);
+          width: vw(11);
+          height: vw(12);
+          a {
+            width: 100%;
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+      .text {
         margin-bottom: vw(18);
         font-size: vw(11);
       }
+        @include mixin.laptop {
+     .popup-header {
+        position: relative;
+        font-size: vw(41, 1920);
+
+        .btn-before {
+          left: vw(62,1920);
+          width: vw(21,1920);
+          height: vw(40,1920);
+        }
+      }
+      .text {
+        margin-bottom: vw(30,1920);
+        font-size: vw(21,1920);
+      }
+    }
+    }
   }
-}
+  
+
+  
+  }
+
 
 .dim {
   position: none;

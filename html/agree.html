@@ -10,7 +10,11 @@
 </head>
 
 <body>
-  <header>개인정보 입력 및 약관 동의</header>
+  <header>
+    <div class="inner">
+      개인정보 입력 및 약관 동의
+    </div>
+  </header>
   <main class="first">
     <!-- main에 클래스에 따라서 약관동의 레이아웃달라짐
     .first : 1등 당첨
@@ -22,7 +26,7 @@
       <div class="inner">
         <div class="text-box not">
           <p class="red">※ 페이지 이탈 시 추가 참여가 불가능하니, 유의하시기 바랍니다.</p>
-          <p class="blue"><strong>[안내]</strong> 이베트 기간 내 당첨자가 나오지 않을 경우에는<br><strong>이벤트 추가 참여자</strong>
+          <p class="blue"><strong>[안내]</strong> 이베트 기간 내 당첨자가 나오지 않을 경우에는<br class="pc"><strong>이벤트 추가 참여자</strong>
             를 대상으로 <strong>재추첨</strong>을 진행하여<br>당첨자를 선정할 예정입니다.</p>
           <p>*이벤트 참여 확인을 위하여, 행운번호가 촬영된 사진을 첨부해주세요. 재추첨 시 확인 자료에 활영될 예정입니다.</p>
         </div>
@@ -256,7 +260,7 @@
       <button class="btn btn-confirm">확인</button>
     </div>
   </div>
-  <div class="popup check" id="check">
+  <div class="popup check" id="check" style="display: block;">
     <div class="popup-header">
       <div class="btn-before"><a href=""><img src="/assets/image/left-arrow.svg" alt=""></a></div>
       당첨내역 확인하기
@@ -296,9 +300,6 @@
         내용<br>
       </div>
 
-    </div>
-    <div class="popup-btn">
-      <button class="btn btn-confirm">확인</button>
     </div>
   </div>
   <script src="/assets/js/index.js"></script>
