@@ -1,6 +1,6 @@
-@use "./utils/mixin" as mixin;
-@use "./variables/device" as device;
-@use "./utils/function" as *;
+@use "../utils/mixin" as mixin;
+@use "../variables/device" as device;
+@use "../utils/function" as *;
 
 .title {
   width: 100%;
