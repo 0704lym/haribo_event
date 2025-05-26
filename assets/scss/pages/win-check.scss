@@ -1,0 +1,128 @@
+@use "../utils/mixin" as mixin;
+@use "../variables/device" as device;
+@use "../utils/function" as *;
+
+.main {
+  height: 100vh;
+  background-color: #FFD500;
+  padding: vw(40 24 60);
+
+  .logo {
+    width: vw(156);
+    margin: vw(0 auto 20);
+  }
+
+  .contents {
+    width: 100%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: vw(30);
+    margin-bottom: vw(32);
+    box-sizing: border-box;
+    padding: vw(50 21);
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: vw(20);
+        min-height: vw(65);
+
+        .img-box {
+          width: vw(80);
+          margin-right: vw(10);
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .cont-box {
+           line-height: 120%;
+           font-size: vw(12);
+          .title {
+            
+            font-weight: 800;
+           
+          }
+     
+        }
+      }
+    }
+  }
+
+  .button-box {
+   margin-bottom: vw(20);
+   text-align: center;
+
+   button {
+    display: inline-block;
+    background-color: #005BAA;
+    color:#fff;
+    font-weight: 800;
+    font-size: vw(14);
+    padding: vw(12 19);
+    text-align: center;
+    border-radius: vw(50);
+   }
+  }
+
+  @include mixin.laptop {
+    height: 100%;
+    padding: vw(41 24 60 ,1920);
+
+  .logo {
+    width: vw(363,1920);
+    margin: vw(0 auto 22,1920);
+  }
+
+  .contents {
+    width: 67%;
+    height: vw(550,1920);
+    margin: 0 auto;
+    border-radius: vw(30,1920);
+    margin-bottom: vw(50,1920);
+    box-sizing: border-box;
+    padding: vw(13 0,1920);
+    ul {
+      width:vw(514,1920);
+      margin: 0 auto;
+      li {
+        margin-bottom: vw(20,1920);
+        min-height: vw(111,1920);
+
+        .img-box {
+          width: vw(157,1920);
+          margin-right: vw(10,1920);
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .cont-box {
+           line-height: 120%;
+           font-size: vw(18,1920);
+          .title {
+            
+            font-weight: 800;
+           
+          }
+     
+        }
+      }
+    }
+  }
+
+  .button-box {
+ margin-bottom: vw(0,1920);
+   text-align: center;
+
+   button {
+    font-size: vw(34,1920);
+    padding: vw(30 44,1920);
+    border-radius: vw(50,1920);
+    
+   }
+  }
+  }
+}
