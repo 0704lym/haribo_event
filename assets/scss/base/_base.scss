@@ -15,12 +15,27 @@ html {
     @include mixin.fontFace("HGSoftGGothicssi", 600, "normal", "HGSoftGGothicssi_60g");
     @include mixin.fontFace("HGSoftGGothicssi", 800, "normal", "HGSoftGGothicssi_80g");
     @include mixin.fontFace("HGSoftGGothicssi", 900, "normal", "HGSoftGGothicssi_90g");
-
+font-family: "HGSoftGGothicssi","맑은고딕", Arial, sans-serif;
     margin: 0 auto ;
   }
 a {
     color:inherit;
     text-decoration: none;
+}
+
+.mobile {
+  display: block;
+}
+.laptop {
+  display: none;
+}
+@include mixin.laptop{
+  .mobile{
+    display: none;
+  }
+  .laptop {
+    display: block;
+  }
 }
 }
 

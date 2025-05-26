@@ -1,0 +1,368 @@
+@use "../utils/mixin" as mixin;
+@use "../variables/device" as device;
+@use "../utils/function" as *;
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: #005baa;
+  padding-top: vw(75);
+  padding-bottom: vw(20);
+
+  .text-box.second {
+    display: none;
+  }
+
+  .text-box.first {
+    display: block;
+  }
+  .contents {
+    z-index: 2;
+    width: 80%;
+    aspect-ratio: 100 / 157; // 거의 정확한 비율
+    margin: 0 auto;
+
+    position: relative;
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &.mobile {
+        display: block;
+      }
+
+      &.laptop {
+        display: none;
+      }
+    }
+
+    .logo {
+      position: absolute;
+      top: vw(-53);
+      left: 50%;
+      transform: translateX(-50%);
+      width: vw(156.21);
+      height: vw(47);
+      z-index: 3;
+    }
+
+    .cont {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .title-box {
+        padding-top: vw(37);
+        font-weight: 800;
+        color: #e3000b;
+        text-align: center;
+        .title,
+        strong {
+          font-weight: 500;
+          font-size: vw(23);
+          font-family: "jua", "맑은고딕", Arial, sans-serif;
+        }
+
+        .title {
+          margin-bottom: vw(10);
+
+          &.win {
+            font-size: vw(20);
+          }
+        }
+      }
+
+      .img-box {
+        position: relative;
+        margin: vw(30 auto);
+        width: vw(208);
+        height: vw(119);
+
+        img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+        }
+        .badge {
+          position: absolute;
+          top: vw(-10);
+          right: vw(20);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: vw(44.19);
+          height: vw(44.19);
+          background-color: #005baa;
+          font-weight: 800;
+          font-size: vw(18);
+          color: #fff;
+          border-radius: 50%;
+          border: 1px solid #fff;
+        }
+      }
+
+      .text-box {
+        text-align: center;
+        line-height: 120%;
+        margin-bottom: vw(34);
+      }
+
+      .button-box {
+        width: 100%;
+        text-align: center;
+        button {
+          margin-bottom: vw(61);
+          display: inline-block;
+          padding: vw(13 45);
+          border-radius: vw(50);
+          font-size: vw(13);
+          font-weight: 800;
+          color: #fff;
+          background-color: #e3000b;
+        }
+      }
+
+      .notice {
+        color: #fff;
+        font-size: vw(10);
+        p {
+          margin-bottom: vw(6);
+          line-height: 120%;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  @include mixin.laptop {
+    width: 100%;
+    height: 100%;
+    background-color: #005baa;
+    padding-top: vw(159, 1920);
+    padding-bottom: vw(61, 1920);
+    box-sizing: border-box;
+
+    .contents {
+      width: 70%;
+      aspect-ratio: 313 / 200;
+      margin: 0 auto;
+
+      position: relative;
+      .bg {
+        &.mobile {
+          display: none;
+        }
+
+        &.laptop {
+          display: block;
+        }
+      }
+
+      .logo {
+        top: vw(-117, 1920);
+        width: vw(363.88, 1920);
+        height: vw(108.9, 1920);
+      }
+
+      .cont {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .title-box {
+          padding-top: vw(75, 1920);
+          .title,
+          strong {
+            font-size: vw(51, 1920);
+          }
+
+          .title {
+            margin-bottom: vw(16, 1920);
+
+            &.win {
+              font-size: vw(40, 1920);
+              br {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .img-box {
+          position: relative;
+          margin: vw(35 auto, 1920);
+          width: vw(522, 1920);
+          height: vw(250, 1920);
+
+          .badge {
+            position: absolute;
+            top: vw(-10, 1920);
+            right: vw(40, 1920);
+            width: vw(93, 1920);
+            height: vw(93, 1920);
+            font-size: vw(35, 1920);
+          }
+        }
+
+        .text-box {
+          text-align: center;
+          line-height: 120%;
+          margin-bottom: vw(35, 1920);
+
+          br {
+            display: none;
+
+            &.pc {
+              display: block;
+            }
+          }
+        }
+
+        .button-box {
+          width: 100%;
+          text-align: center;
+          button {
+            margin-bottom: vw(32, 1920);
+            padding: vw(23 65, 1920);
+            border-radius: vw(50, 1920);
+            font-size: vw(32, 1920);
+          }
+        }
+
+        .notice {
+          width: vw(860, 1920);
+          margin: 0 auto;
+          color: #000;
+          font-size: vw(13, 1920);
+          p {
+            margin-bottom: vw(2, 1920);
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.second {
+    .blue {
+      margin-top: vw(-10);
+      margin-bottom: vw(10);
+      color: #005baa;
+      font-size: vw(6);
+      font-weight: 600;
+      z-index: 10;
+      p {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      small {
+        font-size: vw(4);
+      }
+    }
+    .text-box.second {
+      display: block;
+    }
+    .text-box.first {
+      display: none;
+    }
+
+    .contents {
+      .cont {
+        .title-box {
+          padding-top: vw(26);
+        }
+        .img-box {
+          height: auto;
+          margin-top: vw(10);
+          margin-bottom: vw(10);
+
+          &.third {
+            width: vw(150);
+          }
+          &.fifth {
+            width: vw(100);
+            .badge {
+              right: vw(-5);
+            }
+          }
+          &.sixth {
+            margin: vw(15 auto);
+            width: vw(100);
+            .badge {
+              right: vw(-5);
+            }
+          }
+        }
+
+        .text-box {
+          margin-bottom: vw(10);
+        }
+      }
+    }
+    @include mixin.laptop {
+      .blue {
+        width: 100%;
+        margin-top: vw(-30, 1920);
+        margin-bottom: vw(10, 1920);
+        font-size: vw(11, 1920);
+        p {
+          width: 100%;
+        }
+        small {
+          font-size: vw(8, 1920);
+        }
+
+        &.sixth {
+          margin-top: vw(-15,1920)
+        }
+      }
+
+      .contents {
+        .cont {
+          .title-box {
+            padding-top: vw(76, 1920);
+          }
+          .img-box {
+            width: vw(345, 1920);
+            height: auto;
+            margin-top: vw(23, 1920);
+            margin-bottom: vw(23, 1920);
+
+            &.third {
+              width: vw(300, 1920);
+            }
+            &.fifth {
+              width: vw(230, 1920);
+              margin-bottom: vw(30, 1920);
+            }
+            &.sixth {
+              width: vw(220, 1920);
+              margin: vw(20 auto, 1920);
+            }
+          }
+
+          .text-box {
+            font-size: vw(22, 1920);
+            margin-bottom: vw(22, 1920);
+
+            br {
+              display: none;
+              &.pc {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
