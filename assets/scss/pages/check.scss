@@ -664,3 +664,72 @@
     }
   }
 }
+/* 전체 화면 딤 처리 */
+.dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+/* 팝업 래퍼 */
+.popup-wrap {
+   width: calc(100% - 20px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+    @include mixin.laptop {
+    width: 595px;
+  }
+}
+
+/* 팝업 박스 */
+.popup {
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+  border: 2px solid #000;
+  padding: 24px 0 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: vw(16);
+
+  @include mixin.laptop {
+    font-size: 20px;
+    padding: 45px 0 0;
+  }
+}
+
+/* 버튼 영역 */
+.popup-buttons {
+  display: flex;
+  border-top: 1px solid #ccc;
+  margin-top: 24px;
+  height: 48px;
+   @include mixin.laptop {
+    margin-top: 45px;
+  }
+}
+
+/* 버튼 */
+.popup-buttons button {
+  flex: 1;
+  border: none;
+  background: white;
+  font-size: vw(16);
+  cursor: pointer;
+
+   @include mixin.laptop {
+    font-size: 20px;
+  }
+}
+
+/* 버튼 구분선 */
+.popup-buttons .btn-cancel {
+  border-right: 1px solid #ccc;
+}

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="main announce">
+  <div class="main">
     <div class="sector-visual">
       <h1 class="logo">
         <a href="">
@@ -247,6 +247,16 @@
       </div>
     </div>
   </div>
+ <div class="dim"></div>
+  <div class="popup-wrap">
+    <div class="popup">
+      <p>이미 사용된 행운 번호입니다.</p>
+      <div class="popup-buttons">
+        <button class="btn-confirm">확인</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const questions = document.querySelectorAll('.faq-question');
 
@@ -263,6 +273,17 @@
         }
       });
     });
+    // 예: 팝업 열기
+    document.querySelector('.popup-wrap').style.display = 'block';
+    document.querySelector('.dim').style.display = 'fixed';
+
+    // 팝업 닫기 이벤트
+    document.querySelector('.btn-confirm').addEventListener('click', () => {
+      document.querySelector('.popup-wrap').style.display = 'none';
+      document.querySelector('.dim').style.display = 'none';
+    });
+
+
   </script>
 
 

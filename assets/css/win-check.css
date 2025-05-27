@@ -1,6 +1,6 @@
 .main {
   height: 100vh;
-  background-color: #FFD500;
+  background-color: #ffd500;
   padding: 10.6666666667vw 6.4vw 16vw;
 }
 .main .logo {
@@ -8,13 +8,17 @@
   margin: 0vw auto 5.3333333333vw;
 }
 .main .contents {
+  position: relative;
   width: 100%;
   height: 90%;
   background-color: #fff;
   border-radius: 8vw;
-  margin-bottom: 8.5333333333vw;
+  margin-bottom: 4.2666666667vw;
   box-sizing: border-box;
   padding: 13.3333333333vw 5.6vw;
+}
+.main .contents ul {
+  overflow-y: scroll;
 }
 .main .contents ul li {
   display: flex;
@@ -36,13 +40,20 @@
 .main .contents ul li .cont-box .title {
   font-weight: 800;
 }
+.main .contents .notice {
+  position: absolute;
+  width: 100%;
+  font-size: 1.8666666667vw;
+  left: 0;
+  bottom: 4.5333333333vw;
+  text-align: center;
+}
 .main .button-box {
-  margin-bottom: 5.3333333333vw;
   text-align: center;
 }
 .main .button-box button {
   display: inline-block;
-  background-color: #005BAA;
+  background-color: #005baa;
   color: #fff;
   font-weight: 800;
   font-size: 3.7333333333vw;
@@ -50,10 +61,44 @@
   text-align: center;
   border-radius: 13.3333333333vw;
 }
+@media (min-width: 768px) {
+  .main {
+    padding: 2.6041666667vw 3.125vw 0vw;
+  }
+  .main .contents {
+    height: 68%;
+    padding: 2.6041666667vw 2.6041666667vw;
+  }
+  .main .contents ul {
+    margin: 0 auto;
+    width: 55%;
+    overflow-y: scroll;
+  }
+  .main .contents ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.6041666667vw;
+    min-height: 8.4635416667vw;
+  }
+  .main .contents ul li .img-box {
+    width: 13.0208333333vw;
+    margin-right: 1.3020833333vw;
+  }
+  .main .contents ul li .img-box img {
+    width: 100%;
+  }
+  .main .contents ul li .cont-box {
+    line-height: 120%;
+    font-size: 2.6041666667vw;
+  }
+  .main .contents ul li .cont-box .title {
+    font-weight: 800;
+  }
+}
 @media (min-width: 1024px) {
   .main {
-    height: 100%;
-    padding: 2.1354166667vw 1.25vw 3.125vw;
+    height: 100vh;
+    padding: 2.1354166667vw 1.25vw 0vw;
   }
   .main .logo {
     width: 18.90625vw;
@@ -61,7 +106,7 @@
   }
   .main .contents {
     width: 67%;
-    height: 28.6458333333vw;
+    height: 65%;
     margin: 0 auto;
     border-radius: 1.5625vw;
     margin-bottom: 2.6041666667vw;
@@ -90,7 +135,16 @@
   .main .contents ul li .cont-box .title {
     font-weight: 800;
   }
+  .main .contents .notice {
+    background-color: #fff;
+    font-size: 0.5729166667vw;
+    bottom: 1.40625vw;
+  }
   .main .button-box {
+    position: absolute;
+    bottom: 1.5625vw;
+    left: 50%;
+    transform: translateX(-50%);
     margin-bottom: 0vw;
     text-align: center;
   }

@@ -302,7 +302,7 @@
 
     </div>
   </div>
-  <div class="popup file" id="file" style="display: block;">
+  <!-- <div class="popup file" id="file" style="display: block;">
     <div class="popup-cont">
       <div class="image-box">
         jpeg
@@ -311,7 +311,24 @@
     <div class="popup-btn">
       <button class="btn file btn-confirm">확인</button>
     </div>
+  </div> -->
+   <div class="dim"></div>
+  <!-- 취소여부 -->
+  <div class="popup-wrap">
+    <div class="popup cancel" style="display: block;">
+      <p>취소 시 이벤트 참여가 불가합니다.<br>취소하시겠습니까?</p>
+      <div class="popup-buttons">
+        <button class="btn-cancel">취소</button>
+        <button class="btn-confirm">확인</button>
+      </div>
+    </div>
   </div>
+    <div class="popup-preview">
+  <div class="popup-inner">
+    <img src="첨부된이미지.jpeg" alt="첨부 이미지 미리보기" />
+    <button class="btn-confirm">확인</button>
+  </div>
+</div>
   <script src="/assets/js/index.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -335,6 +352,23 @@
       document.querySelector('.dim').style.display = 'none';
     });
   });
+
+// 취소 팝업
+      // 예: 팝업 열기
+    document.querySelector('.popup-wrap').style.display = 'block';
+    document.querySelector('.dim').style.display = 'fixed';
+
+    // 팝업 닫기 이벤트
+    document.querySelector('.btn-cancel').addEventListener('click', () => {
+      document.querySelector('.popup-wrap').style.display = 'none';
+      document.querySelector('.dim').style.display = 'none';
+    });
+});
+
+//이미지 미리보기
+document.querySelector('.btn-confirm').addEventListener('click', () => {
+  document.querySelector('.popup-preview').style.display = 'none';
+  document.querySelector('.dim').style.display = 'none';
 });
   </script>
 </body>

@@ -756,11 +756,133 @@ main.not .sector-button button:first-child {
 }
 
 .dim {
-  position: none;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+}
+
+/* 팝업 래퍼 */
+.popup-wrap {
+  width: calc(100% - 20px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+@media (min-width: 1024px) {
+  .popup-wrap {
+    width: 595px;
+  }
+}
+
+/* 팝업 박스 */
+.popup.cancel {
+  height: auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #999;
+  padding: 24px 0 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 4.2666666667vw;
+}
+@media (min-width: 1024px) {
+  .popup.cancel {
+    font-size: 20px;
+    padding: 45px 0 0;
+  }
+}
+
+/* 버튼 영역 */
+.popup-buttons {
+  display: flex;
+  border-top: 1px solid #ccc;
+  margin-top: 24px;
+  height: 48px;
+}
+@media (min-width: 1024px) {
+  .popup-buttons {
+    margin-top: 45px;
+  }
+}
+
+/* 버튼 */
+.popup-buttons button {
+  flex: 1;
+  border: none;
+  background: white;
+  font-size: 4.2666666667vw;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .popup-buttons button {
+    font-size: 20px;
+  }
+}
+
+/* 버튼 구분선 */
+.popup-buttons .btn-cancel {
+  border-right: 1px solid #ccc;
+}
+
+/* 팝업 전체 래퍼 */
+.popup-preview {
+  width: 70%;
+  max-width: 756px;
+  aspect-ratio: 1/1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  text-align: center;
+}
+
+/* 팝업 내용 */
+.popup-inner {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 이미지 미리보기 */
+.popup-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+  background: #fff;
+}
+
+/* 확인 버튼 */
+.btn-confirm {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #005BAA;
+  border: 2px solid #005BAA;
+  padding: 10px 32px;
+  font-size: 15px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 800;
+}
+@media (min-width: 1024px) {
+  .btn-confirm {
+    border-radius: 50px;
+    bottom: -100px;
+    font-size: 32px;
+  }
 }
