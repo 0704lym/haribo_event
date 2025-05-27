@@ -12,11 +12,17 @@
 .main .text-box.first {
   display: block;
 }
+.main .title.blue {
+  color: #005baa;
+}
 .main .contents {
+  position: fixed;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   width: 80%;
   aspect-ratio: 100/157;
-  margin: 0 auto;
   position: relative;
 }
 .main .contents .bg {
@@ -43,6 +49,7 @@
 }
 .main .contents .cont {
   position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
 }
@@ -111,6 +118,7 @@
   background-color: #e3000b;
 }
 .main .contents .cont .notice {
+  margin-top: 10%;
   color: #fff;
   font-size: 2.6666666667vw;
 }
@@ -124,7 +132,7 @@
 @media (min-width: 1024px) {
   .main {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #005baa;
     padding-top: 8.28125vw;
     padding-bottom: 3.1770833333vw;
@@ -133,7 +141,6 @@
   .main .contents {
     width: 70%;
     aspect-ratio: 313/200;
-    margin: 0 auto;
     position: relative;
   }
   .main .contents .bg.mobile {
@@ -217,6 +224,23 @@
     margin-bottom: 0;
   }
 }
+@media (min-width: 1400px) {
+  .main {
+    height: 100vh;
+  }
+  .main .contents {
+    position: relative;
+    top: initial;
+    left: initial;
+    transform: none;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .main {
+    height: 100%;
+  }
+}
 .main.second .blue {
   margin-top: -2.6666666667vw;
   margin-bottom: 2.6666666667vw;
@@ -266,6 +290,49 @@
 .main.second .contents .cont .text-box {
   margin-bottom: 2.6666666667vw;
 }
+.main.second.again .contents {
+  top: 50%;
+}
+.main.second.again .contents .bg {
+  margin-top: 5.3333333333vw;
+}
+.main.second.again .contents .again-notice {
+  width: 100%;
+  text-align: center;
+  font-size: 2.9333333333vw;
+  color: #ffd500;
+}
+.main.second.again .contents .again-notice.mobile {
+  display: block;
+}
+.main.second.again .contents .again-notice.pc {
+  display: none;
+}
+.main.second.again .contents .title-box {
+  margin-top: 8vw;
+}
+.main.second.again .contents .img-box.again {
+  width: 22.8vw;
+}
+.main.second.again .contents .text-box {
+  font-size: 3.2vw;
+  margin-bottom: 8vw;
+}
+.main.second.again .contents .text-box strong.first {
+  display: inline-block;
+  font-size: 4vw;
+  margin-bottom: 5.6vw;
+}
+.main.second.again .button-box {
+  display: flex;
+  justify-content: center;
+  gap: 2.6666666667vw;
+}
+.main.second.again .button-box button {
+  width: 26.9333333333vw;
+  padding: 3.4666666667vw;
+  font-size: 3.7333333333vw;
+}
 @media (min-width: 1024px) {
   .main.second .blue {
     width: 100%;
@@ -311,5 +378,40 @@
   }
   .main.second .contents .cont .text-box br.pc {
     display: block;
+  }
+  .main.second.again .contents .bg {
+    margin-top: 0;
+  }
+  .main.second.again .contents .again-notice {
+    font-size: 1.1458333333vw;
+    color: #005baa;
+  }
+  .main.second.again .contents .again-notice.mobile {
+    display: none;
+  }
+  .main.second.again .contents .again-notice.pc {
+    display: block;
+  }
+  .main.second.again .contents .cont .title-box {
+    padding-top: 0;
+    margin-top: 5.7291666667vw;
+  }
+  .main.second.again .contents .cont .title-box .title {
+    margin-top: 1.0416666667vw;
+  }
+  .main.second.again .contents .cont .img-box {
+    width: 7.03125vw;
+  }
+  .main.second.again .contents .cont .text-box .first {
+    font-size: 1.3541666667vw;
+    margin-bottom: 1.0416666667vw;
+  }
+  .main.second.again .contents .cont .button-box {
+    gap: 2.6041666667vw;
+  }
+  .main.second.again .contents .cont .button-box button {
+    width: 10.2083333333vw;
+    padding: 1.3020833333vw 0vw;
+    font-size: 1.6666666667vw;
   }
 }

@@ -16,11 +16,19 @@
   .text-box.first {
     display: block;
   }
+
+  .title.blue {
+    color: #005baa;
+  }
   .contents {
+    position: fixed;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
     width: 80%;
     aspect-ratio: 100 / 157; // 거의 정확한 비율
-    margin: 0 auto;
+    // margin: 0 auto;
 
     position: relative;
     .bg {
@@ -51,6 +59,7 @@
 
     .cont {
       position: absolute;
+      width: 100%;
       top: 0;
       left: 0;
 
@@ -126,6 +135,7 @@
       }
 
       .notice {
+        margin-top: 10%;
         color: #fff;
         font-size: vw(10);
         p {
@@ -140,7 +150,7 @@
   }
   @include mixin.laptop {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #005baa;
     padding-top: vw(159, 1920);
     padding-bottom: vw(61, 1920);
@@ -149,7 +159,7 @@
     .contents {
       width: 70%;
       aspect-ratio: 313 / 200;
-      margin: 0 auto;
+      // margin: 0 auto;
 
       position: relative;
       .bg {
@@ -250,6 +260,21 @@
     }
   }
 
+  @include mixin.desktop {
+      height: 100vh;
+      .contents {
+        position: relative;
+        top: initial;
+        left: initial;
+        transform: none;
+        margin: 0 auto;
+      }
+  }
+  
+  @media screen and (min-width: 1800px) {
+    height: 100%;
+    
+  }
   &.second {
     .blue {
       margin-top: vw(-10);
@@ -308,6 +333,55 @@
         }
       }
     }
+
+    &.again {
+      .contents {
+        top: 50%;
+        .bg {
+          margin-top: vw(20);
+        }
+        .again-notice {
+          width: 100%;
+          text-align: center;
+          font-size: vw(11);
+          color: #ffd500;
+
+          &.mobile {
+            display: block;
+          }
+          &.pc {
+            display: none;
+          }
+        }
+        .title-box {
+          margin-top: vw(30);
+        }
+        .img-box.again {
+          width: vw(85.5);
+        }
+        .text-box {
+          font-size: vw(12);
+          margin-bottom: vw(30);
+          strong.first {
+            display: inline-block;
+            font-size: vw(15);
+            margin-bottom: vw(21);
+          }
+        }
+      }
+
+      .button-box {
+        display: flex;
+        justify-content: center;
+        gap: vw(10);
+
+        button {
+          width: vw(101);
+          padding: vw(13);
+          font-size: vw(14);
+        }
+      }
+    }
     @include mixin.laptop {
       .blue {
         width: 100%;
@@ -322,7 +396,7 @@
         }
 
         &.sixth {
-          margin-top: vw(-15,1920)
+          margin-top: vw(-15, 1920);
         }
       }
 
@@ -358,6 +432,56 @@
               display: none;
               &.pc {
                 display: block;
+              }
+            }
+          }
+        }
+      }
+
+      &.again {
+        .contents {
+          .bg {
+            margin-top: 0;
+          }
+          .again-notice {
+            font-size: vw(22, 1920);
+            color: #005baa;
+
+            &.mobile {
+              display: none;
+            }
+            &.pc {
+              display: block;
+            }
+          }
+
+          .cont {
+            .title-box {
+              padding-top: 0;
+              margin-top: vw(110, 1920);
+              .title {
+                margin-top: vw(20, 1920);
+              }
+            }
+
+            .img-box {
+              width: vw(135, 1920);
+            }
+
+            .text-box {
+              .first {
+                font-size: vw(26, 1920);
+                margin-bottom: vw(20, 1920);
+              }
+            }
+
+            .button-box {
+              gap: vw(50, 1920);
+
+              button {
+                width: vw(196, 1920);
+                padding: vw(25 0, 1920);
+                font-size: vw(32, 1920);
               }
             }
           }
