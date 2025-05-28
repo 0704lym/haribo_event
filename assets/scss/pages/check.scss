@@ -15,6 +15,8 @@
     }
     .sector-parti,
     .sector-visual {
+      position: relative;
+
       .text-box {
         line-height: 120%;
         margin-bottom: 0;
@@ -109,7 +111,7 @@
       @include mixin.laptop {
         .text-box.announce {
           top: vw(221, 1920);
-          font-size: vw(21,1920);
+          font-size: vw(21, 1920);
           .title {
             font-size: vw(43, 1920);
             margin-bottom: vw(40, 1920);
@@ -176,6 +178,7 @@
     }
   }
   &-parti {
+    position: relative;
     background-color: #ffd500;
 
     .text-box {
@@ -308,6 +311,23 @@
       }
     }
 
+    .inquery {
+      position: absolute;
+      right: vw(15);
+      bottom: vw(0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: vw(45.75);
+      height: vw(45.73);
+      background-color: #005baa;
+      border: 1px solid #fff;
+      color: #fff;
+      border-radius: 50%;
+      font-size: vw(11);
+      font-weight: 800;
+    }
+
     @include mixin.laptop {
       background: #fdd202;
       padding: vw(60 0 90, 1920);
@@ -392,6 +412,14 @@
       .notice {
         display: none;
       }
+
+      .inquery {
+      right: vw(98,1920);
+      bottom: vw(30,1920);
+      width: vw(128.28,1920);
+      height: vw(128.28,1920);
+      font-size: vw(33,1920);
+    }
     }
   }
 
@@ -677,13 +705,13 @@
 
 /* 팝업 래퍼 */
 .popup-wrap {
-   width: calc(100% - 20px);
+  width: calc(100% - 20px);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-    @include mixin.laptop {
+  @include mixin.laptop {
     width: 595px;
   }
 }
@@ -711,7 +739,7 @@
   border-top: 1px solid #ccc;
   margin-top: 24px;
   height: 48px;
-   @include mixin.laptop {
+  @include mixin.laptop {
     margin-top: 45px;
   }
 }
@@ -724,7 +752,7 @@
   font-size: vw(16);
   cursor: pointer;
 
-   @include mixin.laptop {
+  @include mixin.laptop {
     font-size: 20px;
   }
 }
