@@ -1,5 +1,6 @@
 @charset "UTF-8";
 .main {
+  position: relative;
   width: 100%;
   height: 100vh;
   background-color: #005baa;
@@ -15,43 +16,43 @@
 .main .title.blue {
   color: #005baa;
 }
-.main .contents {
-  position: fixed;
-  top: 41%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 80%;
-  aspect-ratio: 100/157;
-  position: relative;
-}
-.main .contents .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.main .contents .bg.mobile {
-  display: block;
-}
-.main .contents .bg.laptop {
+.main .notice.pc {
   display: none;
 }
+@media (min-width: 1024px) {
+  .main .notice.pc {
+    display: block;
+  }
+}
+.main .notice.mo {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .main .notice.mo {
+    display: none;
+  }
+}
+.main .contents {
+  z-index: 2;
+  width: 80%;
+  margin: 0 auto;
+}
 .main .contents .logo {
-  position: absolute;
-  top: -14.1333333333vw;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   width: 41.656vw;
   height: 12.5333333333vw;
   z-index: 3;
 }
 .main .contents .cont {
-  position: absolute;
+  background-image: url("../image//yellow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain;
   width: 100%;
-  top: 0;
-  left: 0;
+  padding-top: 1.3333333333vw;
+  box-sizing: border-box;
+  aspect-ratio: 301.32/471.49;
 }
 .main .contents .cont .title-box {
   padding-top: 9.8666666667vw;
@@ -117,51 +118,53 @@
   color: #fff;
   background-color: #e3000b;
 }
-.main .contents .cont .notice {
-  margin-top: 10%;
+.main .contents .notice {
+  margin-top: 5%;
   color: #fff;
   font-size: 2.6666666667vw;
 }
-.main .contents .cont .notice p {
+.main .contents .notice p {
   margin-bottom: 1.6vw;
   line-height: 120%;
 }
-.main .contents .cont .notice p:last-child {
+.main .contents .notice p:last-child {
   margin-bottom: 0;
+}
+@media screen and (min-width: 512px) {
+  .main {
+    height: 100%;
+  }
+  .main .contents {
+    top: 50px;
+  }
 }
 @media (min-width: 1024px) {
   .main {
     width: 100%;
     height: 100vh;
     background-color: #005baa;
-    padding-top: 8.28125vw;
+    padding-top: 2.6041666667vw;
     padding-bottom: 3.1770833333vw;
     box-sizing: border-box;
   }
   .main .contents {
     width: 70%;
-    aspect-ratio: 313/200;
-    position: relative;
-  }
-  .main .contents .bg.mobile {
-    display: none;
-  }
-  .main .contents .bg.laptop {
-    display: block;
   }
   .main .contents .logo {
-    top: -6.09375vw;
     width: 18.9520833333vw;
     height: 5.671875vw;
   }
   .main .contents .cont {
+    background-image: url("../image//yellow_pc.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 1345/860;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
   .main .contents .cont .title-box {
-    padding-top: 3.90625vw;
+    padding-top: 1.5625vw;
+    margin-top: 0;
   }
   .main .contents .cont .title-box .title,
   .main .contents .cont .title-box strong {
@@ -217,6 +220,12 @@
     color: #000;
     font-size: 0.6770833333vw;
   }
+  .main .contents .cont .notice.pc {
+    display: block;
+  }
+  .main .contents .cont .notice.mo {
+    display: none;
+  }
   .main .contents .cont .notice p {
     margin-bottom: 0.1041666667vw;
   }
@@ -264,7 +273,7 @@
   display: none;
 }
 .main.second .contents .cont .title-box {
-  padding-top: 6.9333333333vw;
+  padding-top: 12.2666666667vw;
 }
 .main.second .contents .cont .img-box {
   height: auto;
@@ -290,9 +299,6 @@
 .main.second .contents .cont .text-box {
   margin-bottom: 2.6666666667vw;
 }
-.main.second.again .contents {
-  top: 50%;
-}
 .main.second.again .contents .bg {
   margin-top: 5.3333333333vw;
 }
@@ -304,6 +310,7 @@
 }
 .main.second.again .contents .again-notice.mobile {
   display: block;
+  margin-bottom: 4vw;
 }
 .main.second.again .contents .again-notice.pc {
   display: none;
@@ -350,7 +357,7 @@
     margin-top: -0.78125vw;
   }
   .main.second .contents .cont .title-box {
-    padding-top: 3.9583333333vw;
+    padding-top: 1.8229166667vw;
   }
   .main.second .contents .cont .img-box {
     width: 17.96875vw;
@@ -379,9 +386,6 @@
   .main.second .contents .cont .text-box br.pc {
     display: block;
   }
-  .main.second.again .contents .bg {
-    margin-top: 0;
-  }
   .main.second.again .contents .again-notice {
     font-size: 1.1458333333vw;
     color: #005baa;
@@ -394,7 +398,7 @@
   }
   .main.second.again .contents .cont .title-box {
     padding-top: 0;
-    margin-top: 5.7291666667vw;
+    margin-top: 4.1666666667vw;
   }
   .main.second.again .contents .cont .title-box .title {
     margin-top: 1.0416666667vw;

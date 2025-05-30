@@ -3,6 +3,7 @@
 @use "../utils/function" as *;
 
 .main {
+  position: relative;
   width: 100%;
   height: 100vh;
   background-color: #005baa;
@@ -20,48 +21,40 @@
   .title.blue {
     color: #005baa;
   }
+
+  .notice.pc {
+    display: none;
+
+    @include mixin.laptop {
+      display: block;
+    }
+  }
+
+  .notice.mo {
+    display: block;
+    @include mixin.laptop {
+      display: none;
+    }
+  }
   .contents {
-    position: fixed;
-    top: 41%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
     width: 80%;
-    aspect-ratio: 100 / 157; // 거의 정확한 비율
-    // margin: 0 auto;
-
-    position: relative;
-    .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-      &.mobile {
-        display: block;
-      }
-
-      &.laptop {
-        display: none;
-      }
-    }
+    margin: 0 auto;
 
     .logo {
-      position: absolute;
-      top: vw(-53);
-      left: 50%;
-      transform: translateX(-50%);
+      margin: 0 auto;
       width: vw(156.21);
       height: vw(47);
       z-index: 3;
     }
 
     .cont {
-      position: absolute;
+      @include mixin.backgroundImage("/yellow.png");
+      background-size: contain;
       width: 100%;
-      top: 0;
-      left: 0;
+      padding-top: vw(5);
+      box-sizing: border-box;
+      aspect-ratio: 301.32/471.49;
 
       .title-box {
         padding-top: vw(37);
@@ -133,59 +126,51 @@
           background-color: #e3000b;
         }
       }
-
-      .notice {
-        margin-top: 10%;
-        color: #fff;
-        font-size: vw(10);
-        p {
-          margin-bottom: vw(6);
-          line-height: 120%;
-          &:last-child {
-            margin-bottom: 0;
-          }
+    }
+    .notice {
+      margin-top: 5%;
+      color: #fff;
+      font-size: vw(10);
+      p {
+        margin-bottom: vw(6);
+        line-height: 120%;
+        &:last-child {
+          margin-bottom: 0;
         }
       }
+    }
+  }
+
+  @media screen and (min-width: 512px) {
+    height: 100%;
+    .contents {
+      top: 50px;
     }
   }
   @include mixin.laptop {
     width: 100%;
     height: 100vh;
     background-color: #005baa;
-    padding-top: vw(159, 1920);
+    padding-top: vw(50, 1920);
     padding-bottom: vw(61, 1920);
     box-sizing: border-box;
 
     .contents {
       width: 70%;
-      aspect-ratio: 313 / 200;
-      // margin: 0 auto;
-
-      position: relative;
-      .bg {
-        &.mobile {
-          display: none;
-        }
-
-        &.laptop {
-          display: block;
-        }
-      }
 
       .logo {
-        top: vw(-117, 1920);
         width: vw(363.88, 1920);
         height: vw(108.9, 1920);
       }
 
       .cont {
+        @include mixin.backgroundImage("/yellow_pc.png");
+        aspect-ratio: 1345/860;
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
 
         .title-box {
-          padding-top: vw(75, 1920);
+          padding-top: vw(30, 1920);
+          margin-top: 0;
           .title,
           strong {
             font-size: vw(51, 1920);
@@ -245,6 +230,13 @@
         }
 
         .notice {
+          &.pc {
+            display: block;
+          }
+
+          &.mo {
+            display: none;
+          }
           width: vw(860, 1920);
           margin: 0 auto;
           color: #000;
@@ -261,19 +253,18 @@
   }
 
   @include mixin.desktop {
-      height: 100vh;
-      .contents {
-        position: relative;
-        top: initial;
-        left: initial;
-        transform: none;
-        margin: 0 auto;
-      }
+    height: 100vh;
+    .contents {
+      position: relative;
+      top: initial;
+      left: initial;
+      transform: none;
+      margin: 0 auto;
+    }
   }
-  
+
   @media screen and (min-width: 1800px) {
     height: 100%;
-    
   }
   &.second {
     .blue {
@@ -303,7 +294,7 @@
     .contents {
       .cont {
         .title-box {
-          padding-top: vw(26);
+          padding-top: vw(46);
         }
         .img-box {
           height: auto;
@@ -336,7 +327,6 @@
 
     &.again {
       .contents {
-        top: 50%;
         .bg {
           margin-top: vw(20);
         }
@@ -348,6 +338,7 @@
 
           &.mobile {
             display: block;
+            margin-bottom: vw(15);
           }
           &.pc {
             display: none;
@@ -403,7 +394,7 @@
       .contents {
         .cont {
           .title-box {
-            padding-top: vw(76, 1920);
+            padding-top: vw(35, 1920);
           }
           .img-box {
             width: vw(345, 1920);
@@ -440,9 +431,6 @@
 
       &.again {
         .contents {
-          .bg {
-            margin-top: 0;
-          }
           .again-notice {
             font-size: vw(22, 1920);
             color: #005baa;
@@ -458,7 +446,7 @@
           .cont {
             .title-box {
               padding-top: 0;
-              margin-top: vw(110, 1920);
+              margin-top: vw(80, 1920);
               .title {
                 margin-top: vw(20, 1920);
               }
